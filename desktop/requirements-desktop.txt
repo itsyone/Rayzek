@@ -1,0 +1,5 @@
+# Desktop packaging dependencies (in addition to backend/requirements.txt).
+pywebview>=5.3
+pystray>=0.19.5
+pillow>=10.4
+pyinstaller>=6.11

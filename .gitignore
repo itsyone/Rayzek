@@ -1,0 +1,54 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+*.db
+*.sqlite3
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# Node
+node_modules/
+dist/
+dist-ssr/
+*.local
+.vite/
+
+# Env
+.env
+backend/.env
+frontend/.env
+
+# Editor / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.log
+
+# Coverage
+coverage/
+htmlcov/
+.coverage
+
+# Build/typecheck artifacts
+*.tsbuildinfo
+frontend/vite.config.js
+frontend/vite.config.d.ts
+
+# Local editor/agent settings
+.claude/settings.local.json
+
+# Desktop / PyInstaller build artifacts
+desktop/rayzek.ico
+*.spec.bak
+/build/
+/dist/
+desktop/installer/Output/
+
+# Stray nested duplicate of the project (safe to delete locally)
+/Rayzek/

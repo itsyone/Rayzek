@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Theme tokens (R G B triplets, consumed by Tailwind <alpha-value>). */
+  --rz-bg: 9 11 16; /* #090B10 */
+  --rz-panel: 16 20 28; /* #10141C */
+  --rz-elevated: 21 26 36; /* #151A24 */
+  --rz-border: 38 44 56;
+  --rz-text: 233 236 242;
+  --rz-muted: 138 147 163;
+  --rz-accent: 78 161 255; /* electric blue */
+  --rz-warn: 245 166 35; /* amber */
+  --rz-danger: 240 90 90;
+  --rz-ok: 70 200 140;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  @apply bg-bg text-text font-sans antialiased;
+  margin: 0;
+}
+
+/* Scrollbars */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgb(var(--rz-border)) transparent;
+}
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+*::-webkit-scrollbar-thumb {
+  background: rgb(var(--rz-border));
+  border-radius: 8px;
+}
+
+/* Focus visibility for accessibility */
+:focus-visible {
+  outline: 2px solid rgb(var(--rz-accent));
+  outline-offset: 2px;
+}
+
+@layer components {
+  .rz-panel {
+    @apply rounded-xl border border-border bg-panel shadow-panel;
+  }
+  .rz-elevated {
+    @apply rounded-xl border border-border bg-elevated;
+  }
+  .rz-chip {
+    @apply inline-flex items-center gap-1 rounded-md border border-border px-2 py-0.5 text-xs font-medium;
+  }
+}
+
+/* MapLibre tweaks for dark UI */
+.maplibregl-popup-content {
+  background: rgb(var(--rz-elevated)) !important;
+  color: rgb(var(--rz-text)) !important;
+  border: 1px solid rgb(var(--rz-border));
+  border-radius: 10px;
+  font-size: 12px;
+  padding: 10px 12px;
+}
+.maplibregl-popup-tip {
+  border-top-color: rgb(var(--rz-elevated)) !important;
+}
+.maplibregl-ctrl-attrib {
+  background: rgba(9, 11, 16, 0.6) !important;
+}
+.maplibregl-ctrl-attrib a {
+  color: rgb(var(--rz-muted)) !important;
+}
